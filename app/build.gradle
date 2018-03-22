@@ -1,0 +1,21 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    // ..
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //..
+
+    // RecyclerView
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+
+    // CardView
+    compile 'com.android.support:cardview-v7:26.1.0'
+
+    // Design
+    compile 'com.android.support:design:26.1.0'
+}
