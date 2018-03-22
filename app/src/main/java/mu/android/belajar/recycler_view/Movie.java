@@ -6,8 +6,6 @@ package mu.android.belajar.recycler_view;
 public class Movie {
     private String title, genre, year;
 
-    public Movie() {
-    }
 
     public Movie(String title, String genre, String year) {
         this.title = title;
