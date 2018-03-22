@@ -1,16 +1,11 @@
 package mu.android.belajar.recycler_view;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         prepareMovieData();
     }
 
+
+    //pakai konstruktor dan array list. array list bisa mengisi data lebih dari satu. seperti ada data title, genre dan year. kalau array hanya bisa satu data
     private void prepareMovieData() {
         Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015");
         movieList.add(movie);
