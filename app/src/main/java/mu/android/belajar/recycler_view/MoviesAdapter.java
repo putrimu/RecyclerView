@@ -2,14 +2,13 @@ package mu.android.belajar.recycler_view;
 
 /**
  * Created by MUL-09 on 22/03/2018.
- */import android.content.Context;
-import android.support.v7.widget.CardView;
+ */
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -47,11 +46,15 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         final Movie movie = moviesList.get(position);
-        holder.title.setText(movie.getTitle());
+        holder.title.setText(movie.getTitle());  //untuk panggil dari list title
         holder.genre.setText(movie.getGenre());
         holder.year.setText(movie.getYear());
+        /*holder.onMovie.setOnClickListener((view) {
+        Toast.makeText(context, "Tittle : " +movie.getTitle(), Toast.LENGTH_SHORT);
+        toast.show();
+    });
+*/
     }
-
     @Override
     public int getItemCount() {
         return moviesList.size();
