@@ -3,18 +3,19 @@ package mu.android.belajar.recycler_view;
 /**
  * Created by MUL-09 on 22/03/2018.
  */
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sun.java.util.jar.pack.Attribute;
-
 import java.util.List;
+
+//import com.sun.java.util.jar.pack.Attribute;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHolder> {
 
@@ -23,7 +24,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     private Context context;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, year, genre;
+        public TextView title, year, genre,onMovie;
         private TextView textView;
 
         public MyViewHolder(View view) {
@@ -31,6 +32,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
             title = (TextView) view.findViewById(R.id.title);
             genre = (TextView) view.findViewById(R.id.genre);
             year = (TextView) view.findViewById(R.id.year);
+            onMovie = (TextView) view.findViewById(R.id.cv_movie);
         }
     }
 
@@ -54,15 +56,14 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
         holder.title.setText(movie.getTitle());  //untuk panggil dari list title
         holder.genre.setText(movie.getGenre());
         holder.year.setText(movie.getYear());
-       /* holder.onMovie.setOnClickListener((view) {
-        Toast.makeText(context, "Tittle : " +movie.getTitle(), Toast.LENGTH_SHORT);
-        toast.show();
+        holder.onMovie.setOnClickListener((View) {
+                Toast.makeText(context, "Tittle : " + movie.getTitle(), Toast.LENGTH_SHORT).show();
     });
-*/
+
 
     }
 
-
+/*
     public void toast(){
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast_layout,(view) findViewById(R.id.onMovie));
@@ -78,6 +79,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
         toast show();
 
     }
+    */
 
     @Override
     public int getItemCount() {
