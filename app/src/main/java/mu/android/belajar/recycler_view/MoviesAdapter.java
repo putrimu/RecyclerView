@@ -5,10 +5,14 @@ package mu.android.belajar.recycler_view;
  */
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.sun.java.util.jar.pack.Attribute;
 
 import java.util.List;
 
@@ -20,6 +24,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, year, genre;
+        private TextView textView;
 
         public MyViewHolder(View view) {
             super(view);
@@ -49,12 +54,31 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
         holder.title.setText(movie.getTitle());  //untuk panggil dari list title
         holder.genre.setText(movie.getGenre());
         holder.year.setText(movie.getYear());
-        /*holder.onMovie.setOnClickListener((view) {
+       /* holder.onMovie.setOnClickListener((view) {
         Toast.makeText(context, "Tittle : " +movie.getTitle(), Toast.LENGTH_SHORT);
         toast.show();
     });
 */
+
     }
+
+
+    public void toast(){
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout,(view) findViewById(R.id.onMovie));
+
+        TextView toastText = layout.findViewById(R.id.toast_text);
+        toastText.setText("Tittle: "+movie.getTitle);
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+
+        toast show();
+
+    }
+
     @Override
     public int getItemCount() {
         return moviesList.size();
