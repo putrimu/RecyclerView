@@ -24,7 +24,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     private Context context;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, year, genre,onMovie;
+        public TextView title, year, genre, cvMovie;
         private TextView textView;
 
         public MyViewHolder(View view) {
@@ -32,7 +32,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
             title = (TextView) view.findViewById(R.id.title);
             genre = (TextView) view.findViewById(R.id.genre);
             year = (TextView) view.findViewById(R.id.year);
-            onMovie = (TextView) view.findViewById(R.id.cv_movie);
+            cvMovie = (TextView) view.findViewById(R.id.cv_movie);
         }
     }
 
@@ -56,10 +56,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
         holder.title.setText(movie.getTitle());  //untuk panggil dari list title
         holder.genre.setText(movie.getGenre());
         holder.year.setText(movie.getYear());
-        holder.onMovie.setOnClickListener((View) {
-                Toast.makeText(context, "Tittle : " + movie.getTitle(), Toast.LENGTH_SHORT).show();
-    });
 
+        holder.cvMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,"Tittle : "+movie.getTitle(),Toast.LENGTH_LONG).show();
+        }
+        });
 
     }
 
